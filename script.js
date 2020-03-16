@@ -1,18 +1,23 @@
-/*global document,Audio*/
+/*global setTimeout,$,Audio*/
 var audio = new Audio('cloche.mp3');
 
-function play() {
+function curseur(statut) {
+    $("body").css("cursor", statut);
+    $("div").css("cursor", statut);
+}
+
+function ring() {
     audio.play();
+    curseur('default');
 }
 
 function sonnerie() {
-    play();
+    ring();
 }
 
 function recree() {
-    var x = document.getElementById("duree").selectedIndex,
-        y = document.getElementById("duree").options,
-        duree = y[x].text;
-    play();
-    setTimeout(play, duree * 60 * 1000);
+    var duree = $("#duree option:selected").text();
+    ring();
+    curseur('wait');
+    setTimeout(ring, duree * 60 * 1000);
 }

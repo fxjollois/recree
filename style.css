@@ -25,12 +25,24 @@ body {
     justify-content: center; /* alignement vertical */
 }
 #conteneur {
-    width: 20%;
+    width: 300px;
+    max-width: 80%;
     margin: 0 auto;
 }
-h1 {
+h1, footer {
     text-align: center;
     color: #0a3d62;
+}
+footer {
+    font-size: .75em;
+}
+a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    color: lightgray;
 }
 
 #indication {
