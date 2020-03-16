@@ -3,35 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>Récrée à la maison</title>
-        <style>
-            #go, #duree {
-                width: 100%;
-            }
-            #conteneur {
-                width: 20%;
-                margin: 0 auto;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
-        <script>
-            var audio = new Audio('cloche.mp3');
-            function play() {
-                audio.play();
-                // console.log("sonnerie");
-            }
-            
-            function recree() {
-                var x = document.getElementById("duree").selectedIndex,
-                    y = document.getElementById("duree").options,
-                    duree = y[x].text;
-                // console.log("Début de la récrée de " + duree + " minutes");
-                play();
-                // on lance la récrée
-                setTimeout(play, duree * 60 * 1000);
-            }
-        </script>
+        <h1>Récrée à la maison</h1>
         <div id="conteneur">
+            <div id="indication">Durée de la récréation (en minutes)</div>
             <select id="duree">
                 <option>1</option>
                 <option>5</option>
@@ -39,7 +17,8 @@
                 <option>15</option>
                 <option>30</option>
             </select>
-            <button onclick="recree()" id="go">Lancer la récrée</button>
+            <div class="button" onclick="recree()" id="go"><div>Lancer la récrée</div></div>
+            <div class="button" onclick="sonnerie()" id="go"><div>Juste la sonnerie</div></div>
         </div>
     </body>
 </html>
